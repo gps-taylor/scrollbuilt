@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /steve-breck-pools/
+Sitemap: https://scrollbuilt.com/sitemap.xml
