@@ -210,3 +210,10 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid var(--line-d
 .in{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .in.v{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.in{opacity:1;transform:none;transition:none}.hint i{animation:none}html{scroll-behavior:auto}}
+
+/* instant market check (assets/js/market-check.js) */
+.f .mc{display:none;grid-column:1/-1;font-size:15px;line-height:1.45;padding:13px 15px;border-radius:12px;border:1px solid transparent}
+.f .mc.show{display:block}
+.f .mc.open{background:#e8f5ec;border-color:#bfe3cb;color:#17603a}
+.f .mc.held{background:#fff4e0;border-color:#f3d9a8;color:#7a4b00}
+.f .mc.taken{background:#fbeae7;border-color:#f0c6bf;color:#8a2f22}
