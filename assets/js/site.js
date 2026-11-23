@@ -69,10 +69,42 @@
     job.oninput = extra.oninput = upd; upd();
   }
 
+  // ===== instant draft =====
+  // When the "see your site in 30 seconds" page is open, the main buttons go there. If it is closed
+  // or can't be reached, nothing changes and they keep going to the short form.
+  const api = $('meta[name="sb-api"]')?.content, app = $('meta[name="sb-app"]')?.content;
+  const drafts = $$('a[data-draft]');
+  if (api && app && drafts.length) {
+    const go = () => drafts.forEach(a => {
+      const t = a.dataset.draft;
+      a.href = app + '/start' + (t ? '?trade=' + t : '');
+      if ('draftLabel' in a.dataset) a.textContent = 'See my site in 30 seconds ';
+    });
+    let known = null; try { known = sessionStorage.getItem('sb-draft'); } catch (e) {}
+    if (known === '1') go();
+    else if (known !== '0') fetch(api + '/public/try').then(r => r.json()).then(r => {
+      try { sessionStorage.setItem('sb-draft', r.open ? '1' : '0'); } catch (e) {}
+      if (r.open) go();
+    }).catch(() => {});
+  }
+
   // ===== contact form =====
   const form = $('#lead');
   if (form) {
     const qs = new URLSearchParams(location.search); if (qs.get('industry')) form.industry.value = qs.get('industry');
+    // Arriving from a draft they just made (or a preview we sent): carry what we already know.
+    const pre = (k, max) => (qs.get(k) || '').slice(0, max);
+    if (pre('market', 80)) form.market.value = pre('market', 80);
+    if (pre('phone', 40)) form.phone.value = pre('phone', 40);
+    form.business.value = pre('business', 80); form.ref.value = pre('ref', 20);
+    // Only a link to one of our own draft sites is passed on to the team.
+    if (/^https:\/\/[a-z0-9-]+\.scrollbuilt\.site\//.test(pre('draft', 300))) form.draft.value = pre('draft', 300);
+    if (form.draft.value || pre('ref', 20) === 'draft') {
+      const l = $('.cpage .main .label'), h = $('.cpage .main h1'), p = $('.cpage .main .lede');
+      if (l) l.textContent = 'Your draft is ready to build';
+      if (h) h.innerHTML = 'Let’s build<br><em>your site.</em>';
+      if (p) p.textContent = 'We have your draft. Tell us where to reach you and we’ll finish it with you. We’ll reply within one business day.';
+    }
     form.addEventListener('submit', async e => {
       e.preventDefault(); const ok = $('.ok', form); ok.className = 'ok'; ok.textContent = 'Sending…';
       const data = Object.fromEntries(new FormData(form));
