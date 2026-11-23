@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Get started — ScrollBuilt</title>
-<meta name="description" content="Tell us your trade and where you work. We do the rest, and your new site is live in two weeks. One contractor per trade in your territory.">
+<meta name="description" content="Tell us your trade and your ZIP code. We do the rest, and your new site is live in two weeks. One contractor per trade in your ZIP codes for your first year.">
 <meta property="og:site_name" content="ScrollBuilt"><meta property="og:title" content="Get your new site started — ScrollBuilt"><meta property="og:image" content="https://scrollbuilt.com/assets/img/og.jpg">
 <meta name="theme-color" content="#121417">
-<!-- ScrollBuilt platform API for the instant market check (assets/js/market-check.js). If it is unreachable, the form still emails the team. -->
+<!-- ScrollBuilt platform API for the instant territory check (assets/js/market-check.js). If it is unreachable, the form still emails the team. -->
 <meta name="sb-api" content="https://api.scrollbuilt.com">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23121417'/%3E%3Cg transform='translate(15 15) scale(.34)'%3E%3Cpath fill='%23ff5a1f' d='M0 0H100V32H76V24H24V38H58L42 62H0Z'/%3E%3Cpath fill='%23fafaf8' d='M100 100H0V68H24V76H76V62H48L64 38H100Z'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/barlow-600.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -24,13 +24,13 @@
     <div style="width:100%;max-width:620px">
       <div class="label">One short form. We do the rest.</div>
       <h1 class="h2">Let’s get<br><em>you started.</em></h1>
-      <p class="lede">Tell us your trade and where you work. That’s all we need. We’ll reply within one business day, and if your territory is open we’ll hold it for you.</p>
+      <p class="lede">Tell us your trade and your main ZIP code. That’s all we need. We’ll reply within one business day, and if your territory is open we’ll hold it for you.</p>
 
       <!-- Leads are emailed via FormSubmit. Change the address in the action URL if needed. -->
       <form id="lead" class="f" action="https://formsubmit.co/ajax/hello@scrollbuilt.com" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="New ScrollBuilt market check">
+        <input type="hidden" name="_subject" value="New ScrollBuilt enquiry">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="business"><input type="hidden" name="draft"><input type="hidden" name="ref">
+        <input type="hidden" name="business"><input type="hidden" name="market"><input type="hidden" name="draft"><input type="hidden" name="ref">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <label class="full">Industry
           <select name="industry" required>
@@ -39,7 +39,7 @@
             <option>Remodeling</option><option>Roofing &amp; solar</option><option>ADUs &amp; casitas</option>
             <option>Decks, patios &amp; pergolas</option><option>Other</option>
           </select></label>
-        <label>Area you serve<input name="market" placeholder="e.g. Las Vegas, NV" required autocomplete="address-level2"></label>
+        <label>Your main ZIP code<input name="zip" placeholder="e.g. 89052" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" title="Five digits"></label>
         <label>Timeline (optional)
           <select name="timeline">
             <option value="" selected>When do you want to launch?</option>
@@ -49,7 +49,7 @@
         <label>Email<input name="email" type="email" required autocomplete="email"></label>
         <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
         <button class="btn btn-signal arrow" type="submit">Start my site </button>
-        <p class="fine">No payment to get started. We’ll only use this to reply to you. No spam, no list.</p>
+        <p class="fine">No payment to get started. We’ll only use this to reply to you. No spam, no list. <a href="privacy.html" style="text-decoration:underline">Privacy</a></p>
         <div class="ok" role="status" aria-live="polite"></div>
       </form>
 

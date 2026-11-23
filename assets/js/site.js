@@ -111,7 +111,8 @@
       try {
         const r = await fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
         if (!r.ok) throw new Error(r.status);
-        form.style.display = 'none'; $('.done').classList.add('show'); $('#done-market').textContent = data.market || 'your market';
+        form.style.display = 'none'; $('.done').classList.add('show'); $('#done-market').textContent = data.zip ? 'ZIP ' + data.zip : 'your territory';
+        if (data.territory_status === 'taken') { $('.done h2').textContent = 'Got it. You’re on the waitlist' + (data.zip ? ' for ZIP ' + data.zip : '') + '.'; $('.done .lede').textContent = 'We’ll be in touch if it opens, and within one business day about nearby ZIP codes.'; }
         scrollTo({ top: 0, behavior: 'smooth' });
       } catch (err) { ok.className = 'ok bad'; ok.innerHTML = 'Something went wrong. Email us at <a href="mailto:hello@scrollbuilt.com" style="text-decoration:underline">hello@scrollbuilt.com</a>.'; }
     });
