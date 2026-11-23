@@ -5,7 +5,7 @@ Static site — no build step. Hosted free on Cloudflare Pages from this repo.
 | Path | What it is |
 | --- | --- |
 | `index.html` | Homepage with the AI scroll-build hero |
-| `contact.html` | "Check your market" lead form |
+| `contact.html` | "Get started" lead form |
 | `assets/` | CSS, JS, images |
 | `frames-d/`, `frames-m/` | Scroll animation frames (desktop 16:9, phone 9:16) |
 | `video/` | Build reels for social (16:9 and 9:16) |
