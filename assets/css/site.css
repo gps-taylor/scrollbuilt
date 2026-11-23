@@ -332,3 +332,22 @@ footer .legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule-d
 .f .mc.open{background:#e7f6ec;border-color:#bfe3cb;color:#0b4a2b}
 .f .mc.held{background:#fff4e0;border-color:#f3d9a8;color:#6b4100}
 .f .mc.taken{background:#fbeae7;border-color:#f0c6bf;color:#7d2a1e}
+
+/* plain text pages: privacy, comparisons */
+.doc{padding:calc(var(--nav-h,72px) + 56px) 0 96px}
+.doc>.wrap{max-width:860px}
+.doc h2{font-weight:600;font-size:28px;line-height:1.15;letter-spacing:-.015em;margin-top:48px}
+.doc h3{font-weight:600;font-size:22px;line-height:1.2;margin-top:32px}
+.doc p,.doc ul{margin-top:16px;font-size:18px;line-height:1.6;color:var(--ink-2,var(--ink))}
+.doc ul{padding-left:1.2em}.doc li{margin-top:8px}
+.doc a:not(.btn){text-decoration:underline;text-underline-offset:4px}
+.doc .fine{font-size:14px;color:var(--grey)}
+.doc .tablewrap{margin-top:20px;overflow-x:auto;border:1px solid var(--rule,#dcd9d1);border-radius:var(--r)}
+.doc table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.45;min-width:520px}
+.doc th,.doc td{text-align:left;vertical-align:top;padding:12px 14px;border-top:1px solid var(--rule,#dcd9d1)}
+.doc thead th{border-top:0;font-family:var(--label);font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
+.doc tbody th{font-weight:600}
+.doc tr.us th,.doc tr.us td{background:var(--ink);color:var(--paper)}
+.doc .doc-cta{margin-top:48px}
+.doc .src{margin-top:40px;padding-top:20px;border-top:1px solid var(--rule,#dcd9d1)}
+.doc .src p,.doc .src li{font-size:14px;line-height:1.5;color:var(--grey);overflow-wrap:anywhere}
