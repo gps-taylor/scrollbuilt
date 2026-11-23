@@ -251,6 +251,12 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid var(--line-d
  .cmp .us{padding:22px 18px 24px;border-top:0}.cmp .us td{margin-top:10px}
 }
 
+/* price: comparison table inside a closed <details>, reusing the FAQ summary style */
+.pledge .seal{letter-spacing:.16em}
+.faq.pieces{margin-top:40px}
+.faq.pieces .cmp-wrap{margin-top:0}
+.faq.pieces .cmp-fine{margin-top:18px}
+
 /* no lock-in block */
 .keep{margin-top:64px;border:1px solid var(--line-d);border-radius:var(--r);padding:clamp(26px,4vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);align-items:end}
 .keep .h3{margin-top:16px;color:#fff}
