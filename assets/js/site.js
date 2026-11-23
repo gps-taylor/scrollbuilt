@@ -4,7 +4,7 @@
 
   // nav state
   const build = $('.build');
-  const onScroll = () => document.body.classList.toggle('scrolled', scrollY > (build ? build.offsetHeight - 90 : 30));
+  const onScroll = () => document.body.classList.toggle('scrolled', scrollY > (build ? build.offsetHeight - innerHeight + 2 : 30));
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // reveal on scroll
