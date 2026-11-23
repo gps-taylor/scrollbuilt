@@ -45,9 +45,9 @@ button,input,select,textarea{font:inherit;color:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:80;color:var(--paper);transition:background var(--base),color var(--base),border-color var(--base);border-bottom:1px solid transparent}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
 body.scrolled .nav,body.solid .nav{background:rgba(250,250,248,.94);backdrop-filter:blur(14px);color:var(--ink);border-color:var(--rule)}
-/* the logo: one lockup (mark + lowercase wordmark). Everything is in em, so only size and colour ever differ. */
-.logo{display:inline-flex;align-items:center;gap:.45em;font-family:var(--sans);font-weight:600;font-size:22px;line-height:1;letter-spacing:-.02em;text-transform:none;white-space:nowrap;color:var(--ink)}
-.logo i{flex:0 0 auto;width:1em;height:1em;border-radius:.23em;background:linear-gradient(180deg,var(--brand) 0 50%,currentColor 50% 100%);display:block}
+/* the logo: one lockup (the S mark + lowercase wordmark). Everything is in em, so only size and colour ever differ. */
+.logo{display:inline-flex;align-items:center;gap:.28em;font-family:var(--sans);font-weight:700;font-size:22px;line-height:1;letter-spacing:-.03em;text-transform:none;white-space:nowrap;color:var(--ink)}
+.logo svg{flex:0 0 auto;width:.74em;height:.74em;display:block;fill:currentColor}.logo svg .u{fill:var(--brand)}
 .logo.on-dark,body:not(.scrolled):not(.solid) .nav .logo{color:var(--paper)}
 a.logo{min-height:44px}
 @media (max-width:359px){.nav .logo{font-size:18px}.nav .btn{padding:0 12px;font-size:14px}}
