@@ -8,6 +8,7 @@ Static site — no build step. Hosted free on Cloudflare Pages from this repo.
 | `contact.html` | "Get started" lead form |
 | `assets/` | CSS, JS, images |
 | `frames-d/`, `frames-m/` | Scroll animation frames (desktop 16:9, phone 9:16) |
+| `films/<id>/` | Build films by region for customer sites (desktop and phone frames). The platform deploy uploads them to its library; nothing on this site links to them |
 | `video/` | Build reels for social (16:9 and 9:16) |
 | `_headers` | Cloudflare caching rules |
 
