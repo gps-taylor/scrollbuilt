@@ -358,14 +358,15 @@ footer .legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule-d
 .try label{display:block;min-width:0}
 .try label span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .try .full,.try button{grid-column:1/-1}
-.try input,.try select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--card);border-radius:5px;min-height:50px;padding:10px 13px}
+.try input,.try select{box-sizing:border-box;width:100%;height:50px;margin:0;font:inherit;font-size:16px;line-height:1.2;color:var(--ink);background-color:var(--card);border:1px solid var(--card);border-radius:5px;padding:0 13px;-webkit-appearance:none;appearance:none}
+.try select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5' fill='none' stroke='%23121417' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:18px}
 .try input::placeholder{color:var(--tone)}
 .try input:focus-visible,.try select:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 .try button{width:100%}
 @media (max-width:760px){
 .chapter.first p{margin-top:12px}
 .try{margin-top:16px;gap:8px}
-.try input,.try select{min-height:48px}
+.try input,.try select{height:48px}
 }
 @media (max-height:700px){
 .chapter.first .eyebrow{display:none}
