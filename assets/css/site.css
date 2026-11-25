@@ -90,7 +90,7 @@ em{font-style:normal}
 @media (min-width:1100px){.h1,.h2{font-size:64px;line-height:1;letter-spacing:-.025em}.lede{font-size:22px;line-height:1.45}}
 
 /* scroll hero */
-.build{position:relative;height:620vh;background:var(--ink)}
+.build{position:relative;height:360vh;background:var(--ink)}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 #scene{position:absolute;inset:0;width:100%;height:100%}
 .stage .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -351,3 +351,42 @@ footer .legal{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule-d
 .doc .doc-cta{margin-top:48px}
 .doc .src{margin-top:40px;padding-top:20px;border-top:1px solid var(--rule,#dcd9d1)}
 .doc .src p,.doc .src li{font-size:14px;line-height:1.5;color:var(--grey);overflow-wrap:anywhere}
+
+/* first screen: the draft form */
+.chapter.first{pointer-events:auto;max-width:640px}
+.try{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px}
+.try label{display:block;min-width:0}
+.try label span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.try .full,.try button{grid-column:1/-1}
+.try input,.try select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--card);border-radius:5px;min-height:50px;padding:10px 13px}
+.try input::placeholder{color:var(--tone)}
+.try input:focus-visible,.try select:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.try button{width:100%}
+@media (max-width:760px){
+.chapter.first p{margin-top:12px}
+.try{margin-top:16px;gap:8px}
+.try input,.try select{min-height:48px}
+}
+@media (max-height:700px){
+.chapter.first .eyebrow{display:none}
+}
+/* price: two plans */
+.plans{display:grid;gap:16px;margin-top:40px}
+.plan{background:var(--card);border:1px solid var(--rule);border-radius:var(--r);padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;min-width:0}
+.plan.lead{background:var(--brand);border-color:var(--brand);box-shadow:0 2px 0 var(--ink)}
+.plan.lead .label,.plan.lead .terms{color:var(--ink)}
+.plan .amt{margin-top:12px;font-weight:600;font-size:56px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.plan .amt span{font-size:20px;letter-spacing:-.01em;font-weight:500}
+.plan .terms{margin-top:12px;font-size:16px;font-weight:500;color:var(--grey)}
+.plan ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;font-size:16px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li:before{content:"";flex:0 0 20px;height:20px;margin-top:2px;background:currentColor;-webkit-mask:var(--tick) center/contain no-repeat;mask:var(--tick) center/contain no-repeat}
+.plan .btn{margin-top:auto;align-self:flex-start}
+.plan :focus-visible{outline-color:var(--ink)}
+@media (min-width:900px){
+.plans{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+.plan .btn{width:100%}
+}
+.samples .ind{aspect-ratio:4/3}
