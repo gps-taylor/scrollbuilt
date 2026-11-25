@@ -64,6 +64,13 @@
       const r = build.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) { draw(cur); ui(cur); } requestAnimationFrame(loop); })();
   }
 
+  // ===== phone menu: close on a tap outside it, on Escape, or after choosing a page =====
+  const mnav = $('.mnav');
+  if (mnav) {
+    document.addEventListener('click', e => { if (mnav.open && (!mnav.contains(e.target) || e.target.closest('.mnav a'))) mnav.open = false; });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && mnav.open) { mnav.open = false; $('summary', mnav).focus(); } });
+  }
+
   // ===== one-more-job calculator =====
   const job = $('#job'), extra = $('#extra');
   if (job) {
