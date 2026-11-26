@@ -5,7 +5,7 @@ import json
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CAL = {int(float(r['Week'])): r for r in json.load(open(os.path.join(HERE, 'src/calendar-wk01-13.json')))}
+CAL = {int(float(r['Week'])): r for r in json.load(open(os.path.join(HERE, 'src/calendar.json')))}
 MAN = json.load(open(os.path.join(HERE, 'src/manifest.json')))
 e = html.escape
 
@@ -45,7 +45,7 @@ skipped = [w for w in sorted(CAL) if w not in built]
 skip_rows = ''.join(f'<li><b>Week {w}</b> · {e(CAL[w]["Post date"][:10])} · {e(CAL[w]["Format"])}: {e(CAL[w]["On-image headline"])}</li>' for w in skipped)
 
 doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Social posts, weeks 1 to 13 — ScrollBuilt</title>
+<meta name="robots" content="noindex, nofollow"><title>Social posts — ScrollBuilt</title>
 <style>
 @font-face{{font-family:Barlow;font-weight:400;src:url(../../assets/fonts/barlow-400.woff2) format("woff2")}}
 @font-face{{font-family:Barlow;font-weight:600;src:url(../../assets/fonts/barlow-600.woff2) format("woff2")}}
@@ -69,7 +69,7 @@ dd{{margin:2px 0 0}}dd p{{margin:0 0 6px}}dd a{{color:var(--ink);overflow-wrap:a
 .skipped{{margin-top:28px;background:var(--paper2);border-radius:8px;padding:16px}}.skipped ul{{margin:8px 0 0;padding-left:18px}}.skipped li{{margin:4px 0}}
 </style></head><body><div class="wrap">
 <div class="label">ScrollBuilt · social calendar</div>
-<h1>Weeks 1 to 13. <span>Static and carousel posts.</span></h1>
+<h1>52-week calendar. <span>Static and carousel posts.</span></h1>
 <p class="intro">{len(MAN)} images across {len(built)} posts, 1080 × 1350. Tap an image for the @2x file. Swipe sideways through carousels.</p>
 <nav>{''.join(f'<a href="#wk{w:02d}">Wk {w}</a>' for w in built)}</nav>
 {''.join(cards)}
