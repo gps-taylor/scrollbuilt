@@ -1,0 +1,50 @@
+[
+ {
+  "week": 2,
+  "file": "wk02-static"
+ },
+ {
+  "week": 4,
+  "file": "wk04-static"
+ },
+ {
+  "week": 6,
+  "file": "wk06-slide1"
+ },
+ {
+  "week": 6,
+  "file": "wk06-slide2"
+ },
+ {
+  "week": 6,
+  "file": "wk06-slide3"
+ },
+ {
+  "week": 7,
+  "file": "wk07-static"
+ },
+ {
+  "week": 8,
+  "file": "wk08-slide1"
+ },
+ {
+  "week": 8,
+  "file": "wk08-slide2"
+ },
+ {
+  "week": 8,
+  "file": "wk08-slide3"
+ },
+ {
+  "week": 8,
+  "file": "wk08-slide4"
+ },
+ {
+  "week": 10,
+  "file": "wk10-static"
+ },
+ {
+  "week": 12,
+  "file": "wk12-static"
+ }
+]
