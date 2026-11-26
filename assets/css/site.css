@@ -69,8 +69,8 @@ a.logo{min-height:44px}
 /* the nav button is a quiet outline over the film and solid ink once the page is paper, so the hero keeps one orange action */
 .nav .btn-signal{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
 .nav .btn-signal:hover{background:rgba(250,250,248,.14)}
-body.scrolled .nav .btn-signal{background:var(--ink);color:var(--paper);box-shadow:none}
-body.scrolled .nav .btn-signal:hover{background:#000}
+body.scrolled .nav .btn-signal{background:var(--brand);color:var(--ink);box-shadow:0 2px 0 var(--ink)}
+body.scrolled .nav .btn-signal:hover{background:var(--brand-600)}
 
 /* type */
 .label{display:block;font-family:var(--label);font-weight:600;font-size:14px;line-height:1.3;letter-spacing:.1em;text-transform:uppercase;color:var(--grey)}
