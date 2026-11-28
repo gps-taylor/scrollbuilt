@@ -1,0 +1,2 @@
+# Pilot short links (scrollbuilt.com/r/<code>): the app looks up the code and sends the visitor to the draft.
+/r/* https://api.scrollbuilt.com/r/:splat 302
